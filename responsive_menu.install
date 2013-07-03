@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the responsive_menu module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function responsive_menu_uninstall() {
+  // Remove all the configuration variables created by the module.
+  db_delete('variable')
+    ->condition('name', 'responsive_menu%', 'LIKE')
+    ->execute();
+
+  // Remove all the block configuration the module.
+  if (module_exists('block')) {
+    db_delete('block')
+      ->condition('module', 'responsive_menu')
+      ->execute();
+    db_delete('block_node_type')
+      ->condition('module', 'responsive_menu')
+      ->execute();
+    db_delete('block_role')
+      ->condition('module', 'responsive_menu')
+      ->execute();
+  }
+  cache_clear_all();
+}
+
+/**
+ * Implements hook_enable().
+ */
+function responsive_menu_enable() {
+  drupal_set_message(t('To use Responsive Menu, go to the <a href="/admin/config/user-interface/responsive_menu">settings</a> page.'));
+}

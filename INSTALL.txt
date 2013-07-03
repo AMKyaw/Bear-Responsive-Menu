@@ -1,0 +1,69 @@
+
+CONTENTS OF THIS FILE
+---------------------
+
+ * Installation and Uninstallation
+ * Dependencies
+
+INSTALLATION / UNINSTALLATION
+-----------------------------
+
+1. Decompress the archive and copy the bear_responsive_menu folder
+   into your modules folder.
+
+     sites/all/modules
+
+2. Install the Jquery Update module into your modules folder. I recommend using the
+   current dev version.
+
+
+3. Turn on the both modules under:
+
+     admin/modules
+
+4. Configure Jquery Update at 
+
+    admin/config/development/jquery_update 
+
+    If you use the dev version, choose:
+    1.8 for Default jQuery Version
+    1.5 Alternate jQuery version for administrative pages
+
+    This will avoid breaking views UI for the time being
+
+
+5. Configure the "Administer Responsive Menu" permission.
+
+     admin/people/permissions
+
+6. Navigate to:
+
+     admin/config/user-interface/responsive_nav
+
+     configure the options there. 
+
+7. To uninstall, disable the Responsive Menu module.
+
+      admin/modules
+
+    Go to the uninstall section, select the module and uninstall.
+
+      admin/modules/uninstall
+
+    Delete the plugin folder at:
+
+      sites/all/libraries/bear_responsive_nav
+
+    
+For further instructions on using the plugin, see the following 
+website: http://www.meanthemes.com/plugins/meanmenu/
+
+DEPENDENCIES
+------------
+
+The menu module must be enabled.
+
+Jquery update
+https://drupal.org/project/jquery_update
+
+

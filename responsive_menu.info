@@ -1,0 +1,8 @@
+name = Responsive Menu
+description = Use the jquery.meanmenu.js plugin for a responsive navigation
+core = 7.x
+configure = admin/config/user-interface/responsive_navigation
+package = User interface
+dependencies[] = menu
+dependencies[] = jquery_update
+
