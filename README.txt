@@ -6,13 +6,13 @@ plugin into Drupal.
 Features
 ------------
 
-A simple module for a great responsive navigation solution. Full UI and supports expandable navigation children.
+A simple module for a great responsive navigation solution. Full UI and supports expandable navigation children. No need for media query
 
 
 Known Issues
 ------------
 
-Needs Jquery Update as the script requires 1.8 or above.
+Needs Jquery Update as the script requires 1.7 or above.
 
 Author
 ------------
