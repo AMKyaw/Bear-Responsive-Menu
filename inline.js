@@ -2,7 +2,7 @@
           Drupal.behaviors.responsive_menu = {
               attach: function (context, settings) {
                 var menuclass = Drupal.settings.responsive_menu.menu_class;
-                $('.'+menuclass).meanmenu({
+                $('.' + menuclass).meanmenu({
                 meanMenuClass:Drupal.settings.responsive_menu.menu_class,
                 meanMenuClose:Drupal.settings.responsive_menu.close_sign,
                 meanMenuCloseSize:Drupal.settings.responsive_menu.close_size,

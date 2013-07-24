@@ -1,5 +1,4 @@
 <?php
-
 define('RNJS_SITE_URL', 'http://www.meanthemes.com/plugins/meanmenu/');
 define('RNJS_GITHUB_URL', 'https://github.com/weare2ndfloor/meanMenu');
 define('RNJS_DOWNLOAD_URI', 'https://github.com/weare2ndfloor/meanMenu/archive/master.zip');
