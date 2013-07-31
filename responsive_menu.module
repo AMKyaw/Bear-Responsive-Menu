@@ -14,11 +14,11 @@ function responsive_menu_help($path, $arg) {
   switch ($path) {
     case 'admin/modules#description':
       $output .= t(RNJS_MAIN_JS . ' plugin for a nice responsive Drupal menu.');
-    break;
+      break;
 
     case 'admin/config/user-interface/responsive_menu':
       $output = t('<p>More option and help can be found at !rnjs.</p>', array('!rnjs' => l(RNJS_MAIN_JS, RNJS_SITE_URL)));
-    return $output;
+      return $output;
   }
 }
 
@@ -71,8 +71,7 @@ function responsive_menu_library() {
 }
 
 /**
- * Implements hook_init().
- * Load the JS libraries and send inline js to the template.
+ * Implements hook_init(). Load the JS libraries and send inline js to the template.
  */
 function responsive_menu_init() {
   $name = 'responsive_menu';
@@ -96,6 +95,6 @@ function responsive_menu_init() {
   drupal_add_js(array($name => $settings), array('type' => 'setting', 'scope' => JS_DEFAULT));
   drupal_add_js(drupal_get_path('module', 'responsive_menu') . '/inline.js');
   drupal_add_css(drupal_get_path('module', 'responsive_menu') . '/meanmenu.css');
-// add inline javascript
+// Add inline javascript.
   drupal_add_library('responsive_menu', 'responsive_menu');
 }
