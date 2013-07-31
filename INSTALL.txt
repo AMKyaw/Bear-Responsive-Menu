@@ -12,8 +12,7 @@ INSTALLATION / UNINSTALLATION
 
      sites/all/modules
 
-2. Install the Jquery Update module into your modules folder. I recommend using the current dev version.
-
+2. Install the Jquery Update module into your modules folder.
 
 3. Turn on the both modules under:
 

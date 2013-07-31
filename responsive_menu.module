@@ -89,7 +89,7 @@ function responsive_menu_init() {
     'contract_sign' => variable_get('responsive_menu_contract_sign', '-'),
     'remove_att' => variable_get('responsive_menu_remove_att', 'false'),
     );
-drupal_add_js(array('responsive_menu' => $settings), array('type' => 'setting', 'scope' => JS_DEFAULT));
+drupal_add_js(array($name => $settings), array('type' => 'setting', 'scope' => JS_DEFAULT));
 drupal_add_js(drupal_get_path('module', 'responsive_menu') . '/inline.js');
 drupal_add_css(drupal_get_path('module', 'responsive_menu') . '/meanmenu.css');
 

@@ -6,8 +6,6 @@
  * Implements the configuration screen.
  */
 
-module_load_include('inc', 'responsive_menu', 'responsive_menu_common');
-
 /**
  * Settings form as implemented by hook_menu.
  */
