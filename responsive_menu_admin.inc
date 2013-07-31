@@ -89,8 +89,8 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#type' => 'select',
     '#title' => t('Show menu children (sub navigation)'),
     '#options' => array(
-     "true" => t('Yes'),
-     "false" => t('No'),
+      "true" => t('Yes'),
+      "false" => t('No'),
     ),
     '#default_value' => variable_get('responsive_menu_show_children', 'true'),
     '#required' => TRUE,
@@ -100,8 +100,8 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#type' => 'select',
     '#title' => t('Allow expand/collapse children'),
     '#options' => array(
-     "true" => t('Yes'),
-     "false" => t('No'),
+      "true" => t('Yes'),
+      "false" => t('No'),
     ),
     '#default_value' => variable_get('responsive_menu_show_children_collapse', 'true'),
     '#required' => TRUE,
@@ -129,9 +129,9 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#type' => 'select',
     '#title' => t('Remove classes and IDs'),
     '#options' => array(
-     "true" => t('Yes'),
-     "false" => t('No'),
-     ),
+      "true" => t('Yes'),
+      "false" => t('No'),
+    ),
     '#default_value' => variable_get('responsive_menu_remove_att', 'false'),
     '#required' => TRUE,
   );
@@ -159,7 +159,7 @@ function responsive_menu_settings_validate($form, &$form_state) {
   $menu_expand = $form_state['values']['responsive_menu_expand_sign'];
   $menu_contract = $form_state['values']['responsive_menu_contract_sign'];
   $remove_att = $form_state['values']['responsive_menu_remove_att'];
-  //Check to make sure it is a number and that is a maximum of 2 digits.
+  // Check to make sure it is a number and that is a maximum of 2 digits.
   if (is_numeric($close) || strlen($close) > 1) {
     form_set_error('responsive_menu_close', t('You must enter only one letter'));
   }

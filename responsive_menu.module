@@ -13,10 +13,11 @@ module_load_include('inc', 'responsive_menu', 'responsive_menu_common');
 function responsive_menu_help($path, $arg) {
   switch ($path) {
     case 'admin/modules#description':
-    $output .= t(RNJS_MAIN_JS . ' plugin for a nice responsive Drupal menu.');
+      $output .= t(RNJS_MAIN_JS . ' plugin for a nice responsive Drupal menu.');
     break;
+
     case 'admin/config/user-interface/responsive_menu':
-    $output = t('<p>More option and help can be found at !rnjs.</p>', array('!rnjs' => l(RNJS_MAIN_JS, RNJS_SITE_URL)));
+      $output = t('<p>More option and help can be found at !rnjs.</p>', array('!rnjs' => l(RNJS_MAIN_JS, RNJS_SITE_URL)));
     return $output;
   }
 }
@@ -34,7 +35,7 @@ function responsive_menu_menu() {
     'page arguments' => array('responsive_menu_admin_settings'),
     'file' => 'responsive_menu_admin.inc',
     'access arguments' => array('administer responsive menu'),
-    );
+  );
 
   return $items;
 }
@@ -47,11 +48,14 @@ function responsive_menu_permission() {
     'administer responsive navigation' => array(
       'title' => t('Administer Responsive Navigation'),
       'description' => t('Administer permission for Responsive Menu.'),
-      ),
-    );
+    ),
+  );
   return $permissions;
 }
 
+/**
+ * Implements add_js().
+ */
 function responsive_menu_library() {
   $module_path = drupal_get_path('module', 'responsive_menu');
   // Main Javascript file.
@@ -61,8 +65,8 @@ function responsive_menu_library() {
     'version' => '2.0',
     'js' => array(
       $module_path . '/jquery.meanmenu.2.0.min.js' => array(),
-      ),
-    );
+    ),
+  );
   return $libraries;
 }
 
@@ -88,11 +92,10 @@ function responsive_menu_init() {
     'expand_sign' => variable_get('responsive_menu_expand_sign', '+'),
     'contract_sign' => variable_get('responsive_menu_contract_sign', '-'),
     'remove_att' => variable_get('responsive_menu_remove_att', 'false'),
-    );
-drupal_add_js(array($name => $settings), array('type' => 'setting', 'scope' => JS_DEFAULT));
-drupal_add_js(drupal_get_path('module', 'responsive_menu') . '/inline.js');
-drupal_add_css(drupal_get_path('module', 'responsive_menu') . '/meanmenu.css');
-
+  );
+  drupal_add_js(array($name => $settings), array('type' => 'setting', 'scope' => JS_DEFAULT));
+  drupal_add_js(drupal_get_path('module', 'responsive_menu') . '/inline.js');
+  drupal_add_css(drupal_get_path('module', 'responsive_menu') . '/meanmenu.css');
 // add inline javascript
-drupal_add_library('responsive_menu', 'responsive_menu');
+  drupal_add_library('responsive_menu', 'responsive_menu');
 }
