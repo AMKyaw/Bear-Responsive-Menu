@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Responsive Menu Administration UI
@@ -14,7 +13,7 @@ function responsive_menu_admin_settings($form, &$form_state) {
   $form['responsive_menu'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Responsive Nav Options'),
-    );
+  );
 
   $form['responsive_menu']['responsive_menu_menu_class'] = array(
     '#type' => 'textfield',
@@ -23,7 +22,7 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#default_value' => variable_get('responsive_menu_menu_class', 'menu-block-wrapper'),
     '#size' => 100,
     '#required' => TRUE,
-    );
+  );
 
   $form['responsive_menu']['responsive_menu_close'] = array(
     '#type' => 'textfield',
@@ -31,7 +30,7 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#default_value' => variable_get('responsive_menu_close', 'X'),
     '#size' => 1,
     '#required' => TRUE,
-    );
+  );
 
   $form['responsive_menu']['responsive_menu_close_size'] = array(
     '#type' => 'textfield',
@@ -40,7 +39,7 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#default_value' => variable_get('responsive_menu_close_size', '20px'),
     '#size' => 1,
     '#required' => TRUE,
-    );
+  );
 
   $form['responsive_menu']['responsive_menu_background'] = array(
     '#type' => 'textfield',
@@ -49,7 +48,7 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#default_value' => variable_get('responsive_menu_background', '#333'),
     '#size' => 10,
     '#required' => FALSE,
-    );
+  );
 
   $form['responsive_menu']['responsive_menu_position'] = array(
     '#type' => 'textfield',
@@ -58,7 +57,7 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#default_value' => variable_get('responsive_menu_position', 'right'),
     '#size' => 10,
     '#required' => TRUE,
-    );
+  );
 
   $form['responsive_menu']['responsive_menu_position_distance'] = array(
     '#type' => 'textfield',
@@ -67,7 +66,7 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#default_value' => variable_get('responsive_menu_position_distance', '0'),
     '#size' => 10,
     '#required' => TRUE,
-    );
+  );
 
   $form['responsive_menu']['responsive_menu_min_screen_width'] = array(
     '#type' => 'textfield',
@@ -76,7 +75,7 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#default_value' => variable_get('responsive_menu_min_screen_width', '580'),
     '#size' => 10,
     '#required' => TRUE,
-    );
+  );
 
   $form['responsive_menu']['responsive_menu_nav_push'] = array(
     '#type' => 'textfield',
@@ -84,7 +83,7 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#default_value' => variable_get('responsive_menu_nav_push', '0'),
     '#size' => 10,
     '#required' => FALSE,
-    );
+  );
 
   $form['responsive_menu']['responsive_menu_show_children'] = array(
     '#type' => 'select',
@@ -92,10 +91,10 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#options' => array(
      "true" => t('Yes'),
      "false" => t('No'),
-     ),
+    ),
     '#default_value' => variable_get('responsive_menu_show_children', 'true'),
     '#required' => TRUE,
-    );
+  );
 
   $form['responsive_menu']['responsive_menu_show_children_collapse'] = array(
     '#type' => 'select',
@@ -103,10 +102,10 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#options' => array(
      "true" => t('Yes'),
      "false" => t('No'),
-     ),
+    ),
     '#default_value' => variable_get('responsive_menu_show_children_collapse', 'true'),
     '#required' => TRUE,
-    );
+  );
 
   $form['responsive_menu']['responsive_menu_expand_sign'] = array(
     '#type' => 'textfield',
@@ -115,7 +114,7 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#default_value' => variable_get('responsive_menu_expand_sign', '+'),
     '#size' => 25,
     '#required' => TRUE,
-    );
+  );
 
   $form['responsive_menu']['responsive_menu_contract_sign'] = array(
     '#type' => 'textfield',
@@ -124,7 +123,7 @@ function responsive_menu_admin_settings($form, &$form_state) {
     '#default_value' => variable_get('responsive_menu_contract_sign', '-'),
     '#size' => 25,
     '#required' => TRUE,
-    );
+  );
 
   $form['responsive_menu']['responsive_menu_remove_att'] = array(
     '#type' => 'select',
@@ -135,7 +134,7 @@ function responsive_menu_admin_settings($form, &$form_state) {
      ),
     '#default_value' => variable_get('responsive_menu_remove_att', 'false'),
     '#required' => TRUE,
-    );
+  );
 
   // Custom validation to make sure the user is entering numbers.
   $form['#validate'][] = 'responsive_menu_settings_validate';
@@ -160,7 +159,6 @@ function responsive_menu_settings_validate($form, &$form_state) {
   $menu_expand = $form_state['values']['responsive_menu_expand_sign'];
   $menu_contract = $form_state['values']['responsive_menu_contract_sign'];
   $remove_att = $form_state['values']['responsive_menu_remove_att'];
-  
   //Check to make sure it is a number and that is a maximum of 2 digits.
   if (is_numeric($close) || strlen($close) > 1) {
     form_set_error('responsive_menu_close', t('You must enter only one letter'));
