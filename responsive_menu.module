@@ -13,7 +13,7 @@ module_load_include('inc', 'responsive_menu', 'responsive_menu_common');
 function responsive_menu_help($path, $arg) {
   switch ($path) {
     case 'admin/modules#description':
-      $output .= t(RNJS_MAIN_JS . ' plugin for a nice responsive Drupal menu.');
+      $output = t('Use the jquery.meanmenu.js plugin for a nice responsive Drupal menu.');
       break;
 
     case 'admin/config/user-interface/responsive_menu':
@@ -54,7 +54,7 @@ function responsive_menu_permission() {
 }
 
 /**
- * Implements add_js().
+ * Implements hook_library().
  */
 function responsive_menu_library() {
   $module_path = drupal_get_path('module', 'responsive_menu');
